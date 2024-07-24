@@ -26,6 +26,54 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
+### Introduction
+
+$H_0$: The vaccine (covid921) IS NOT effective in males 
+
+$H_0$: The vaccine (covid921) IS  effective in males 
+
+##Methods
+
+
+variable "Treatment" is Categorical
+
+variable "Males" is categorical 
+
+We use helper file cat~cat 
+
+##Methods
+
+##Graphical results 
+
+
+```{r}
+males=filter(FinalData, FinalData$sex=="M")
+
+barchartGC(~treatment + infected,data=males)
+barchartGC(~infected +treatment,data=males, type="percent")
+
+```
+
+
+
+The graph above shows that more men who took the placebo got covid than those who took the vaccine. 
+
+
+
+##Numerical results
+
+
+
+```{r}
+table1 <- xtabs(~treatment + infected, data=males)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The table above shows that 73.8% of males who took the placebo got Covid and that 26.2% 0f men who took the vaccine got Covid. 
+
+
+
 
 ## Females
 
