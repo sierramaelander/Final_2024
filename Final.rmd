@@ -20,19 +20,18 @@ FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
 ```
 
-# Introduction
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-## Males
+# Males
 
-### Introduction
+## Introduction
 
 $H_0$: The vaccine (covid921) IS NOT effective in males 
 
 $H_0$: The vaccine (covid921) IS  effective in males 
 
-##Methods
+## Methods
 
 
 variable "Treatment" is Categorical
@@ -41,9 +40,8 @@ variable "Males" is categorical
 
 We use helper file cat~cat 
 
-##Methods
 
-##Graphical results 
+## Graphical results 
 
 
 ```{r}
@@ -60,7 +58,7 @@ The graph above shows that more men who took the placebo got covid than those wh
 
 
 
-##Numerical results
+## Numerical results
 
 
 
@@ -73,16 +71,41 @@ colPerc(table1)
 The table above shows that 73.8% of males who took the placebo got Covid and that 26.2% 0f men who took the vaccine got Covid. 
 
 
+## Inferential results
 
 
-## Females
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 
-## LGBTQ
+The Chi-Squared test above shows that the p-value is .0000000000000002 this is less than 0.05 so we must reject HO. 
+
+The fisher exact test shows that the odds ratio is 2.81|1 this shows that it is effective. 
+
+## Conclusion
+
+In conclusion he covid vaccine IS effective in males this is because 1. the p-value is smaller than 0.05 and 2. the Fisher test showed that the odds ratio is effective (2.81|1) 
+
+### Females
+
+## Introduction
 
 
 
-## Druggies
+
+
+
+
+
+
+### LGBTQ
+
+
+
+### Druggies
 
 
 # Overall Results and Conclusions
