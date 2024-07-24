@@ -89,15 +89,72 @@ The fisher exact test shows that the odds ratio is 2.81|1 this shows that it is 
 
 In conclusion he covid vaccine IS effective in males this is because 1. the p-value is smaller than 0.05 and 2. the Fisher test showed that the odds ratio is effective (2.81|1) 
 
-### Females
+# Females
 
 ## Introduction
 
+$H_0$: The vaccine (covid921) IS NOT effective in females
+
+$H_0$: The vaccine (covid921) IS  effective in females
+
+## Methods
+
+Variable "Females" is categorical
+
+Variable "Treatment" categorical 
+
+we use helper file cat~cat
+
+## Descriptive Results 
+
+
+```{r}
+females=filter(FinalData, FinalData$sex=="F")
+```
+
+```{r}
+barchartGC(~treatment + infected,data=females)
+barchartGC(~infected +treatment,data=females, type="percent")
+
+```
+
+
+The graph shows that more women who took the placebo got covid than women who tool the vaccine. 
 
 
 
+## Numerical results 
 
 
+```{r}
+table2 <- xtabs(~infected + treatment, data=females)
+rowPerc(table2)
+colPerc(table2)
+```
+
+
+The table above shows that 64% of women who got the placebo got covid and that 35% of women who got the vaccine got covid. 
+
+
+## Inferential Results 
+
+
+
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+```
+
+The chi-squared test shows that the p-value is .00000001 this is less than 0.05 so we must reject HO
+
+the fisher exact test shows that the odds ratio is 1.85|1 this odds ratio is effective.
+
+
+
+## Conclusion 
+
+In conclusion we must REJCT Ho this is because the p-value is less that 0.05 and the odds ratio is shown to be effective ( 1.86|1 )
 
 
 
