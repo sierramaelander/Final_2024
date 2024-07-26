@@ -101,7 +101,7 @@ $H_A$: The vaccine (covid921) IS  effective in females
 
 Variable "Females" is categorical
 
-Variable "Treatment" categorical 
+Variable "Treatment" is categorical 
 
 we use helper file cat~cat
 
@@ -119,7 +119,7 @@ barchartGC(~infected +treatment,data=females, type="percent")
 ```
 
 
-The graph shows that more women who took the placebo got covid than women who tool the vaccine. 
+The graph shows that more women who took the placebo got covid than women who took the vaccine. 
 
 
 
@@ -184,6 +184,10 @@ barchartGC(~treatment + LGBTQ,data=FinalData, type="percent")
 
 ```
 
+the graph shows that those in the LGBTQ community who took the placebo vs those who took the vaccine was pretty much even 
+
+
+
 ## Numerical results 
 
 ```{r}
@@ -215,13 +219,63 @@ In conclusion we must fail to reject H0 this means that the covid vaccine is NOT
 ### Druggies
 
 
+## Introduction 
+
+
+$H_0$ The vaccine is NOT effective in drug users 
+
+$H_A$ The vaccine IS effective in drug users 
+
+
+## Methods 
+
+variable "Drug User" is categorical
+
+Variable "treatment" is categorical 
+
+We user helper file cat~cat
+
+## Graphical Results 
+
+```{r}
+barchartGC(~treatment + DrugUser,data=FinalData)
+barchartGC(~treatment + DrugUser,data=FinalData, type="percent")
+
+```
+
+
+The graph shows that drug users who took the placebo and got covid was pretty much even to those who took the vaccine. 
+
+
+## Numerical Results 
+
+
+```{r}
+table4 <- xtabs(~treatment + DrugUser, data=FinalData)
+rowPerc(table4)
+colPerc(table4)
+```
+The data shows that those who are drug users and took the placebo is 50.16%  and those who are drug users and took the vaccine is 
+48.84% so they are about even 
+## Inferential results 
+
+
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+fisher.test(table4)
+```
+
+The chi squared test shows that the p-value is .84 which is greater than 0.05 so we must fail to reject H0
+
+the fisher exact test shows that the odds ratio is 1|1 this shows that the odds are  basically 50/50 in effectiveness this means there is NO relationship between treatment and drug users 
 
 
 
+## Conclusion 
 
 
-
-
+In conclusion since the p-value was greater than 0.05 we must fail to reject HO this means that the covid vaccine is NOT effective in drug users. Since the odds ratio was 1|1 this shows that there is basically a 50/50 chance in effectivness. 
 
 
 # Overall Results and Conclusions
