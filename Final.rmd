@@ -87,7 +87,7 @@ The fisher exact test shows that the odds ratio is 2.81|1 this shows that it is 
 
 ## Conclusion
 
-In conclusion he covid vaccine IS effective in males this is because 1. the p-value is smaller than 0.05 and 2. the Fisher test showed that the odds ratio is effective (2.81|1) 
+In conclusion the covid vaccine IS effective in males this is because 1. the p-value is smaller than 0.05 and 2. the Fisher test showed that the odds ratio is effective (2.81|1) 
 
 # Females
 
@@ -158,7 +158,7 @@ In conclusion the vaccine IS effective in females so  we must REJCT Ho this is b
 
 
 
-### LGBTQ
+# LGBTQ
 
 ## Introduction 
 
@@ -216,7 +216,7 @@ In conclusion we must fail to reject H0 this means that the covid vaccine is NOT
 
 
 
-### Druggies
+# Druggies
 
 
 ## Introduction 
@@ -279,3 +279,26 @@ In conclusion since the p-value was greater than 0.05 we must fail to reject HO 
 
 
 # Overall Results and Conclusions
+
+
+## Males Conclusion 
+
+
+In conclusion the covid vaccine IS effective in males this is because 1. the p-value is smaller than 0.05 and 2. the Fisher test showed that the odds ratio is effective (2.81|1) 
+
+## Females Conclusion 
+
+
+In conclusion the vaccine IS effective in females so  we must REJCT Ho this is because the p-value is less that 0.05 and the odds ratio is shown to be effective ( 1.86|1 )
+
+
+##  LGBTQ Conclusion 
+
+
+In conclusion we must fail to reject H0 this means that the covid vaccine is NOT effective in LGBTQ members this is because the p-value was greater than 0.05 (0.1099)  and the odds ratio showed it to be ineffective (.94|1)
+
+
+## Drug User Conclusion
+
+
+In conclusion since the p-value was greater than 0.05 we must fail to reject HO this means that the covid vaccine is NOT effective in drug users. Since the odds ratio was 1|1 this shows that there is basically a 50/50 chance in effectivness. 
