@@ -29,7 +29,7 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 $H_0$: The vaccine (covid921) IS NOT effective in males 
 
-$H_0$: The vaccine (covid921) IS  effective in males 
+$H_A$: The vaccine (covid921) IS  effective in males 
 
 ## Methods
 
@@ -95,7 +95,7 @@ In conclusion he covid vaccine IS effective in males this is because 1. the p-va
 
 $H_0$: The vaccine (covid921) IS NOT effective in females
 
-$H_0$: The vaccine (covid921) IS  effective in females
+$H_A$: The vaccine (covid921) IS  effective in females
 
 ## Methods
 
@@ -154,15 +154,74 @@ the fisher exact test shows that the odds ratio is 1.85|1 this odds ratio is eff
 
 ## Conclusion 
 
-In conclusion we must REJCT Ho this is because the p-value is less that 0.05 and the odds ratio is shown to be effective ( 1.86|1 )
+In conclusion the vaccine IS effective in females so  we must REJCT Ho this is because the p-value is less that 0.05 and the odds ratio is shown to be effective ( 1.86|1 )
 
 
 
 ### LGBTQ
 
+## Introduction 
+
+$H_0$ The Vaccine IS NOT Effective in those of the LGBTQ community 
+
+$H_A$ The Vaccine IS effective in those of the LGBTQ community 
+
+
+## Methods 
+
+The varriable "LGBTQ" is categorical 
+
+The varriable "treatment" is categorical 
+
+We use helper file cat~cat
+
+
+## Graphical Results 
+
+```{r}
+barchartGC(~treatment + LGBTQ,data=FinalData)
+barchartGC(~treatment + LGBTQ,data=FinalData, type="percent")
+
+```
+
+## Numerical results 
+
+```{r}
+table3 <- xtabs(~treatment +LGBTQ, data=FinalData)
+rowPerc(table3)
+colPerc(table3)
+```
+The data above shows that the people who are gay and had the placebo (50%) is less than those who had the vaccine (51%)
+
+
+
+```{r}
+chisq.test(table3)
+chisqtestGC(table3)
+fisher.test(table3)
+```
+
+The chi squared test shows that the p-value is 0.1099 this is greater than 0.05 therefore we must fail to reject H0. 
+
+The fisher exact test shows that the odds ratio is .94|1 this shows that it is not effective.
+
+## Conclusion 
+
+In conclusion we must fail to reject H0 this means that the covid vaccine is NOT effective in LGBTQ members this is because the p-value was greater than 0.05 (0.1099)  and the odds ratio showed it to be ineffective (.94|1)
+
+
 
 
 ### Druggies
+
+
+
+
+
+
+
+
+
 
 
 # Overall Results and Conclusions
